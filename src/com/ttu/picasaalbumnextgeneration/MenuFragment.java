@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.ttu.picasaalbumnextgeneration.Model.MenuItems;
 import com.ttu.picasaalbumnextgeneration.dummy.DummyContent;
 
 /**
@@ -18,7 +19,7 @@ import com.ttu.picasaalbumnextgeneration.dummy.DummyContent;
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */
-public class ItemListFragment extends ListFragment {
+public class MenuFragment extends ListFragment {
 
 	/**
 	 * The serialization (saved instance state) Bundle key representing the
@@ -63,7 +64,7 @@ public class ItemListFragment extends ListFragment {
 	 * Mandatory empty constructor for the fragment manager to instantiate the
 	 * fragment (e.g. upon screen orientation changes).
 	 */
-	public ItemListFragment() {
+	public MenuFragment() {
 	}
 
 	@Override
@@ -71,9 +72,9 @@ public class ItemListFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 
 		// TODO: replace with a real list adapter.
-		setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
+		setListAdapter(new ArrayAdapter<MenuItems.MenuItem>(getActivity(),
 				android.R.layout.simple_list_item_activated_1,
-				android.R.id.text1, DummyContent.ITEMS));
+				android.R.id.text1, MenuItems.ITEMS));
 	}
 
 	@Override
@@ -116,7 +117,7 @@ public class ItemListFragment extends ListFragment {
 
 		// Notify the active callbacks interface (the activity, if the
 		// fragment is attached to one) that an item has been selected.
-		mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+		mCallbacks.onItemSelected(MenuItems.ITEMS.get(position).id);
 	}
 
 	@Override
