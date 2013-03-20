@@ -7,6 +7,7 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -20,13 +21,19 @@ public class CameraActivity extends Activity {
 	private static int TAKE_PICTURE = 1;
 	private Uri imageUri;
 	
-	public void takePhoto(View view) {
+	public void takePhoto() {
 	    Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-	    File photo = new File(Environment.getExternalStorageDirectory(),  "Pic.jpg");
-	    intent.putExtra(MediaStore.EXTRA_OUTPUT,
-	            Uri.fromFile(photo));
-	    imageUri = Uri.fromFile(photo);
+	    //File photo = new File(Environment.getExternalStorageDirectory(),  "Pic.jpg");
+	    //intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photo));
+	    //imageUri = Uri.fromFile(photo);
 	    startActivityForResult(intent, TAKE_PICTURE);
+	}
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_camera);
+		takePhoto();
 	}
 	
 	@Override
@@ -38,14 +45,14 @@ public class CameraActivity extends Activity {
 	            Uri selectedImage = imageUri;
 	            getContentResolver().notifyChange(selectedImage, null);
 	            // TODO: Create imageview
-	            //ImageView imageView = (ImageView) findViewById(R.id.ImageView);
+	            ImageView imageView = (ImageView) findViewById(R.id.ImageView);
 	            ContentResolver cr = getContentResolver();
 	            Bitmap bitmap;
 	            try {
 	                 bitmap = android.provider.MediaStore.Images.Media
 	                 .getBitmap(cr, selectedImage);
 
-	                //imageView.setImageBitmap(bitmap);
+	                imageView.setImageBitmap(bitmap);
 	                Toast.makeText(this, selectedImage.toString(),
 	                        Toast.LENGTH_LONG).show();
 	            } catch (Exception e) {

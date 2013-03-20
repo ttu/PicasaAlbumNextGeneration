@@ -44,7 +44,7 @@ public class MenuActivity extends FragmentActivity implements
 				detailIntent = new Intent(this, LoginActivity.class);
 			}
 			else if (id == "2"){
-				detailIntent = new Intent(this, ItemDetailActivity.class);
+				detailIntent = new Intent(this, CameraActivity.class);
 			}
 			else if (id == "3"){
 				detailIntent = new Intent(this, MenuActivity.class);
