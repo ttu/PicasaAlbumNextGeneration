@@ -13,7 +13,10 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 // http://stackoverflow.com/questions/2729267/android-camera-intent
@@ -56,7 +59,19 @@ public class CameraActivity extends Activity {
 			 Toast.makeText(this, "Storage not mounted", Toast.LENGTH_SHORT).show();
 		}
 		
-		takePhoto();
+		//Creating Button variable
+        Button button = (Button) findViewById(R.id.btn_upload);     
+      
+       //Adding Listener to button
+       button.setOnClickListener(new View.OnClickListener() {
+          
+            @Override
+            public void onClick(View v) {
+                // TODO: Upload current photo
+            }
+        });
+         
+		//takePhoto();
 	}
 	
 	@Override

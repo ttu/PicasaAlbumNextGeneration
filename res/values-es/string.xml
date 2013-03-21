@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">La PicasaAlbum NG</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="title_login">La Login</string>
+    <string name="title_camera">La cámara</string>
+    <string name="btn_upload">El Upload</string>
+
+</resources>

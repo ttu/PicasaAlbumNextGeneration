@@ -4,6 +4,7 @@
     <string name="app_name">PicasaAlbumNextGeneration</string>
     <string name="title_item_detail">Item Detail</string>
     <string name="title_login">Login</string>
-    <string name="title_camera">La camara</string>
+    <string name="title_camera">Camera</string>
+    <string name="btn_upload">Upload</string>
 
 </resources>
