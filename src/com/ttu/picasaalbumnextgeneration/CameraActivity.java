@@ -7,6 +7,7 @@ import java.util.Date;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -46,7 +47,7 @@ public class CameraActivity extends Activity {
 	}
 	
 	private String getAlbumDir(){
-		return Environment.getExternalStorageDirectory() + File.separator + "MYAPP";		
+		return Environment.getExternalStorageDirectory() + File.separator + "DCIM/Camera/";		
 	}
 	
 	@Override
@@ -71,7 +72,7 @@ public class CameraActivity extends Activity {
             }
         });
          
-		//takePhoto();
+		takePhoto();
 	}
 	
 	@Override
