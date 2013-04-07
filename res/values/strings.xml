@@ -6,5 +6,10 @@
     <string name="title_login">Login</string>
     <string name="title_camera">Camera</string>
     <string name="btn_upload">Upload</string>
+    
+    <!-- Login view -->
+  	<string name="welcome">Welcome to the Live SDK for Android Sample Application!</string>
+    <string name="begin">Begin by hitting in the \"Sign in\" button.</string>
+    <string name="sign_in">Sign in</string>
 
 </resources>
