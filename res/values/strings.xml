@@ -12,4 +12,7 @@
     <string name="begin">Begin by hitting in the \"Sign in\" button.</string>
     <string name="sign_in">Sign in</string>
 
+     <!-- Menu -->
+     <string name="menu_exit">Exit</string>
+    <string name="menu_title">Menu</string>
 </resources>

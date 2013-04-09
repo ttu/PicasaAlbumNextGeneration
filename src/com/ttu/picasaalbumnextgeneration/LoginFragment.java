@@ -1,5 +1,6 @@
 package com.ttu.picasaalbumnextgeneration;
 
+import com.actionbarsherlock.app.SherlockFragment;
 import com.microsoft.live.LiveAuthClient;
 
 import android.app.ProgressDialog;
@@ -11,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class LoginFragment extends Fragment {
+public class LoginFragment extends SherlockFragment {
 
 	public static final String ARG_ITEM_ID = "item_id";
 

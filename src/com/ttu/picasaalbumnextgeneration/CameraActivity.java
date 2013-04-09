@@ -4,6 +4,9 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuItem;
+
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -21,7 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 // http://stackoverflow.com/questions/2729267/android-camera-intent
-public class CameraActivity extends Activity {
+public class CameraActivity extends SherlockActivity {
 
 	private static final String JPEG_FILE_PREFIX = "Img_";
 	private static final String JPEG_FILE_SUFFIX = "JPG";
@@ -54,6 +57,10 @@ public class CameraActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_camera);
+		
+		// Show the Up button in the action bar.
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setHomeButtonEnabled(true);
 		
 		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) == false)
 		{
@@ -102,4 +109,17 @@ public class CameraActivity extends Activity {
 	        }
 	    }
 	}
+	    
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+		
+		switch (item.getItemId()) {
+			case android.R.id.home:
+				Toast.makeText(this, "Item Id \"" + item.getItemId() + "\"", Toast.LENGTH_SHORT).show();
+	        	finish();
+	        	return(true);
+		    }
+		
+		return false;
+    }
 }

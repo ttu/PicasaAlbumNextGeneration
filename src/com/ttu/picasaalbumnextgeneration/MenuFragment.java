@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.actionbarsherlock.app.SherlockListFragment;
 import com.ttu.picasaalbumnextgeneration.Model.MenuItems;
 import com.ttu.picasaalbumnextgeneration.dummy.DummyContent;
 
@@ -19,7 +20,7 @@ import com.ttu.picasaalbumnextgeneration.dummy.DummyContent;
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */
-public class MenuFragment extends ListFragment {
+public class MenuFragment extends SherlockListFragment {
 
 	/**
 	 * The serialization (saved instance state) Bundle key representing the
