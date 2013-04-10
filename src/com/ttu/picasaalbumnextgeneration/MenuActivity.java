@@ -55,7 +55,7 @@ public class MenuActivity extends SherlockFragmentActivity implements
 				detailIntent = new Intent(this, CameraActivity.class);
 			}
 			else if (id == "3"){
-				detailIntent = new Intent(this, MenuActivity.class);
+				detailIntent = new Intent(this, GalleryActivity.class);
 			}
 			
 			detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);

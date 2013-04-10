@@ -961,24 +961,27 @@ containing a value of this type.
         public static final int abs__title=0x7f04001b;
         public static final int abs__titleDivider=0x7f04001c;
         public static final int abs__up=0x7f04000b;
-        public static final int beginTextView=0x7f04003b;
+        public static final int beginTextView=0x7f04003e;
         public static final int btn_upload=0x7f040034;
         public static final int disableHome=0x7f040009;
         public static final int edit_query=0x7f040027;
+        public static final int gallery_container=0x7f040035;
+        public static final int gallery_fragment=0x7f040039;
         public static final int homeAsUp=0x7f040006;
-        public static final int item_detail=0x7f040038;
-        public static final int item_detail_container=0x7f040035;
-        public static final int item_list=0x7f040036;
+        public static final int item_detail=0x7f04003b;
+        public static final int item_detail_container=0x7f040036;
+        public static final int item_list=0x7f040037;
         public static final int listMode=0x7f040002;
-        public static final int login_container=0x7f040037;
-        public static final int login_fragment=0x7f040039;
+        public static final int login_container=0x7f040038;
+        public static final int login_fragment=0x7f04003c;
         public static final int normal=0x7f040001;
         public static final int showCustom=0x7f040008;
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
-        public static final int signInButton=0x7f04003c;
+        public static final int signInButton=0x7f04003f;
         public static final int tabMode=0x7f040003;
-        public static final int textView1=0x7f04003a;
+        public static final int textView1=0x7f04003d;
+        public static final int textView_gallery=0x7f04003a;
         public static final int useLogo=0x7f040004;
         public static final int wrap_content=0x7f040000;
     }
@@ -1010,9 +1013,10 @@ containing a value of this type.
         public static final int abs__search_view=0x7f030015;
         public static final int abs__simple_dropdown_hint=0x7f030016;
         public static final int activity_camera=0x7f030017;
-        public static final int activity_item_detail=0x7f030018;
-        public static final int activity_item_twopane=0x7f030019;
-        public static final int activity_login=0x7f03001a;
+        public static final int activity_gallery=0x7f030018;
+        public static final int activity_item_detail=0x7f030019;
+        public static final int activity_item_twopane=0x7f03001a;
+        public static final int activity_login=0x7f03001b;
         /** 
     Layout alias to replace the single-pane version of the layout with a
     two-pane version on Large screens.
@@ -1028,11 +1032,12 @@ containing a value of this type.
     http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
     
          */
-        public static final int activity_menu=0x7f03001b;
-        public static final int fragment_item_detail=0x7f03001c;
-        public static final int fragment_login=0x7f03001d;
-        public static final int sherlock_spinner_dropdown_item=0x7f03001e;
-        public static final int sherlock_spinner_item=0x7f03001f;
+        public static final int activity_menu=0x7f03001c;
+        public static final int fragment_gallery=0x7f03001d;
+        public static final int fragment_item_detail=0x7f03001e;
+        public static final int fragment_login=0x7f03001f;
+        public static final int sherlock_spinner_dropdown_item=0x7f030020;
+        public static final int sherlock_spinner_item=0x7f030021;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1081,19 +1086,20 @@ containing a value of this type.
          */
         public static final int abs__shareactionprovider_share_with_application=0x7f090009;
         public static final int app_name=0x7f09000f;
-        public static final int begin=0x7f090015;
+        public static final int begin=0x7f090016;
         public static final int btn_upload=0x7f090013;
         /**  Menu 
          */
-        public static final int menu_exit=0x7f090017;
-        public static final int menu_title=0x7f090018;
-        public static final int sign_in=0x7f090016;
+        public static final int menu_exit=0x7f090018;
+        public static final int menu_title=0x7f090019;
+        public static final int sign_in=0x7f090017;
         public static final int title_camera=0x7f090012;
+        public static final int title_gallery=0x7f090014;
         public static final int title_item_detail=0x7f090010;
         public static final int title_login=0x7f090011;
         /**  Login view 
          */
-        public static final int welcome=0x7f090014;
+        public static final int welcome=0x7f090015;
     }
     public static final class style {
         /** 

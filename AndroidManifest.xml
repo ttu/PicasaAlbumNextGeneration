@@ -50,6 +50,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CameraActivity" />
         </activity>
+          <activity
+            android:name="com.ttu.picasaalbumnextgeneration.GalleryActivity"
+            android:label="@string/title_gallery"
+            android:parentActivityName=".GalleryActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GalleryActivity" />
+        </activity>
     </application>
 
 </manifest>

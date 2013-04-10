@@ -1,33 +1,28 @@
 package com.ttu.picasaalbumnextgeneration;
 
+import android.os.Bundle;
+import android.widget.Toast;
+
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
 
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.widget.Toast;
-
-public class LoginActivity extends SherlockFragmentActivity {
-
+public class GalleryActivity extends SherlockFragmentActivity {
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
-	
+		setContentView(R.layout.activity_gallery);
+		
 		// Show the Up button in the action bar.
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
 		
 		if (savedInstanceState == null) {
-			Bundle arguments = new Bundle();
-			arguments.putString(LoginFragment.ARG_ITEM_ID, getIntent()
-					.getStringExtra(LoginFragment.ARG_ITEM_ID));
-			LoginFragment fragment = new LoginFragment();
-			fragment.setArguments(arguments);
+			GalleryFragment fragment = new GalleryFragment();
 			getSupportFragmentManager().beginTransaction()
-					.add(R.id.login_container, fragment).commit();
+					.add(R.id.gallery_container, fragment).commit();
 		}
 	}
 	
