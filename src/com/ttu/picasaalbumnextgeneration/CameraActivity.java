@@ -5,7 +5,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.SubMenu;
 
 import android.app.Activity;
 import android.content.ContentResolver;
@@ -109,17 +111,28 @@ public class CameraActivity extends SherlockActivity {
 	        }
 	    }
 	}
-	    
+	
 	@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-		
-		switch (item.getItemId()) {
+    public boolean onCreateOptionsMenu(Menu menu) {
+		SubMenu sub = menu.addSubMenu(getString(R.string.menu_title));
+		sub.add(0, R.style.Theme_Sherlock, 0, getString(R.string.menu_exit));       
+		sub.getItem().setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+		return true;
+    }
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {	
+		Toast.makeText(this, "Item Id \"" + item.getItemId() + "\"", Toast.LENGTH_SHORT).show();
+       		
+		switch(item.getItemId()){
+			case 0:
+				return false;
 			case android.R.id.home:
-				Toast.makeText(this, "Item Id \"" + item.getItemId() + "\"", Toast.LENGTH_SHORT).show();
-	        	finish();
-	        	return(true);
-		    }
-		
-		return false;
+				finish();
+				return true;
+			default:
+				moveTaskToBack(true);
+				return true;
+		}
     }
 }
