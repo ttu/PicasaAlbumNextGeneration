@@ -5,6 +5,7 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
@@ -21,11 +22,11 @@ public class LoginActivity extends SherlockFragmentActivity {
 		getSupportActionBar().setHomeButtonEnabled(true);
 		
 		if (savedInstanceState == null) {
-			Bundle arguments = new Bundle();
-			arguments.putString(LoginFragment.ARG_ITEM_ID, getIntent()
-					.getStringExtra(LoginFragment.ARG_ITEM_ID));
+			//Bundle arguments = new Bundle();
+			//arguments.putString(LoginFragment.ARG_ITEM_ID, getIntent()
+			//		.getStringExtra(LoginFragment.ARG_ITEM_ID));
 			LoginFragment fragment = new LoginFragment();
-			fragment.setArguments(arguments);
+			//fragment.setArguments(arguments);
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.login_container, fragment).commit();
 		}
@@ -47,7 +48,10 @@ public class LoginActivity extends SherlockFragmentActivity {
 			case 0:
 				return false;
 			case android.R.id.home:
-				finish();
+				Intent intent = new Intent(this, MenuActivity.class);            
+		        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
+		        startActivity(intent);            
+				//finish();
 				return true;
 			default:
 				moveTaskToBack(true);

@@ -20,6 +20,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -94,12 +95,16 @@ public class CameraActivity extends SherlockActivity {
 	            Uri selectedImage = imageUri;
 	            getContentResolver().notifyChange(selectedImage, null);
 	            ImageView imageView = (ImageView) findViewById(R.id.ImageView);
+	            
 	            ContentResolver cr = getContentResolver();
 	            Bitmap bitmap;
 	            try {
-	                 bitmap = android.provider.MediaStore.Images.Media
-	                 .getBitmap(cr, selectedImage);
+	                bitmap = android.provider.MediaStore.Images.Media
+	                .getBitmap(cr, selectedImage);
 
+	                OnClickListener listener = new ImageListener(selectedImage);              
+	 	            imageView.setOnClickListener(listener);
+	 	            
 	                imageView.setImageBitmap(bitmap);
 	                Toast.makeText(this, selectedImage.toString(),
 	                        Toast.LENGTH_LONG).show();

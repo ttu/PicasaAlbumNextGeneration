@@ -2,16 +2,20 @@
 <resources>
 
     <string name="app_name">PicasaAlbumNextGeneration</string>
+    
     <string name="title_item_detail">Item Detail</string>
-    <string name="title_login">Login</string>
+    <string name="title_login">SkyDrive Authentication</string>
     <string name="title_gallery">Gallery</string>
     <string name="title_camera">Camera</string>
+    <string name="title_image">Selected Image</string>
+    
     <string name="btn_upload">Upload</string>
     
     <!-- Login view -->
   	<string name="welcome">Welcome to the Live SDK for Android Sample Application!</string>
     <string name="begin">Begin by hitting in the \"Sign in\" button.</string>
     <string name="sign_in">Sign in</string>
+    <string name="sign_out">Sign out</string>
 
      <!-- Menu -->
      <string name="menu_exit">Exit</string>
