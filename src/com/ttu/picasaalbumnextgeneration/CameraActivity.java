@@ -96,18 +96,21 @@ public class CameraActivity extends SherlockActivity {
 	            getContentResolver().notifyChange(selectedImage, null);
 	            ImageView imageView = (ImageView) findViewById(R.id.ImageView);
 	            
-	            ContentResolver cr = getContentResolver();
+	            //ContentResolver cr = getContentResolver();
 	            Bitmap bitmap;
 	            try {
-	                bitmap = android.provider.MediaStore.Images.Media
-	                .getBitmap(cr, selectedImage);
+	            	String file = imageUri.toString().substring(7, imageUri.toString().length());
+	            	Toast.makeText(this, file, Toast.LENGTH_LONG).show();	            	
+	            	bitmap = BitmapHelper.ShrinkBitmap(file, 1000, 1000);
+	            	
+	                //bitmap = android.provider.MediaStore.Images.Media
+	                //.getBitmap(cr, selectedImage);
 
-	                OnClickListener listener = new ImageListener(selectedImage);              
+	                OnClickListener listener = new ImageListener(file);              
 	 	            imageView.setOnClickListener(listener);
 	 	            
 	                imageView.setImageBitmap(bitmap);
-	                Toast.makeText(this, selectedImage.toString(),
-	                        Toast.LENGTH_LONG).show();
+	                //Toast.makeText(this, selectedImage.toString(),Toast.LENGTH_LONG).show();
 	            } catch (Exception e) {
 	                Toast.makeText(this, "Failed to load", Toast.LENGTH_SHORT)
 	                        .show();

@@ -967,6 +967,7 @@ containing a value of this type.
         public static final int edit_query=0x7f040027;
         public static final int gallery_container=0x7f040035;
         public static final int gallery_fragment=0x7f04003a;
+        public static final int gallery_item=0x7f040041;
         public static final int homeAsUp=0x7f040006;
         public static final int image_container=0x7f040036;
         public static final int item_detail=0x7f04003c;
@@ -1038,8 +1039,9 @@ containing a value of this type.
         public static final int fragment_gallery=0x7f03001e;
         public static final int fragment_item_detail=0x7f03001f;
         public static final int fragment_login=0x7f030020;
-        public static final int sherlock_spinner_dropdown_item=0x7f030021;
-        public static final int sherlock_spinner_item=0x7f030022;
+        public static final int gallery_item=0x7f030021;
+        public static final int sherlock_spinner_dropdown_item=0x7f030022;
+        public static final int sherlock_spinner_item=0x7f030023;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 

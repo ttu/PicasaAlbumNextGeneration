@@ -7,16 +7,16 @@ import android.view.View;
 
 public class ImageListener implements View.OnClickListener 
 {
-    private Uri mImage;
+    private String mImage;
 
-    public ImageListener(Uri image) {
+    public ImageListener(String image) {
     	mImage = image;
     }
 
     @Override
     public void onClick(View v) {
     	Intent detailIntent = new Intent(v.getContext(), ImageActivity.class);
-    	detailIntent.putExtra("ImageUri", mImage.toString());
+    	detailIntent.putExtra("ImageUri", mImage);
     	v.getContext().startActivity(detailIntent);             
     }
 

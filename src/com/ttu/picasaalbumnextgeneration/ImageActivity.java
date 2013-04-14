@@ -29,7 +29,7 @@ public class ImageActivity extends SherlockActivity{
 		Bundle extras = getIntent().getExtras();
 		String uriString = extras.getString("ImageUri");
 		Toast.makeText(this, uriString, Toast.LENGTH_LONG).show();
-		Uri selectedImage = Uri.parse(uriString);
+		Uri selectedImage = Uri.parse("file://" + uriString);
 		
 		getContentResolver().notifyChange(selectedImage, null);
         ImageView imageView = (ImageView) findViewById(R.id.image_container);
@@ -37,7 +37,10 @@ public class ImageActivity extends SherlockActivity{
         ContentResolver cr = getContentResolver();
         Bitmap bitmap;
         try {
-            bitmap = android.provider.MediaStore.Images.Media.getBitmap(cr, selectedImage);
+        	
+        	bitmap = BitmapHelper.ShrinkBitmap(uriString, 1000, 1000);
+        	
+            //bitmap = android.provider.MediaStore.Images.Media.getBitmap(cr, selectedImage);
             imageView.setImageBitmap(bitmap);
             Toast.makeText(this, selectedImage.toString(),
                     Toast.LENGTH_LONG).show();

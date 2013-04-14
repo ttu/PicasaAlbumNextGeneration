@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.ttu.picasaalbumnextgeneration.R;
+
 public class MenuItems {
 
 	public static List<MenuItem> ITEMS = new ArrayList<MenuItem>();
@@ -13,7 +15,7 @@ public class MenuItems {
 
 	static {
 		// Add default menu items
-		addItem(new MenuItem("1", "Login"));
+		addItem(new MenuItem("1", "SkyDrive Authentication" ));
 		addItem(new MenuItem("2", "Camera"));
 		addItem(new MenuItem("3", "Gallery"));
 	}
