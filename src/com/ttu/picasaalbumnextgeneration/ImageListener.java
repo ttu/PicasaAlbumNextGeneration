@@ -1,8 +1,6 @@
 package com.ttu.picasaalbumnextgeneration;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.view.View;
 
 public class ImageListener implements View.OnClickListener 
@@ -19,5 +17,4 @@ public class ImageListener implements View.OnClickListener
     	detailIntent.putExtra("ImageUri", mImage);
     	v.getContext().startActivity(detailIntent);             
     }
-
 }
