@@ -2,9 +2,23 @@
 <resources>
 
     <string name="app_name">La PicasaAlbum NG</string>
+     
     <string name="title_item_detail">Item Detail</string>
-    <string name="title_login">La Login</string>
+    <string name="title_login">SkyDrive Authentication</string>
+    <string name="title_gallery">La galeria</string>
     <string name="title_camera">La cámara</string>
-    <string name="btn_upload">El Upload</string>
+    <string name="title_image">Selected Image</string>
+    
+    <string name="btn_upload">El upload</string>
+    
+    <!-- Login view -->
+  	<string name="welcome">Bienvenidos!</string>
+    <string name="begin">Login by pressing \"Sign in\" button.</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_out">Sign out</string>
 
+    <!-- Menu -->
+    <string name="menu_exit">Salir</string>
+    <string name="menu_title">Menú</string>
+    
 </resources>

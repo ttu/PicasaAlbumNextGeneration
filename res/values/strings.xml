@@ -12,12 +12,12 @@
     <string name="btn_upload">Upload</string>
     
     <!-- Login view -->
-  	<string name="welcome">Welcome to the Live SDK for Android Sample Application!</string>
-    <string name="begin">Begin by hitting in the \"Sign in\" button.</string>
+  	<string name="welcome">Welcome to the Picasa Album Next Generation!</string>
+    <string name="begin">Login by pressing \"Sign in\" button.</string>
     <string name="sign_in">Sign in</string>
     <string name="sign_out">Sign out</string>
 
-     <!-- Menu -->
-     <string name="menu_exit">Exit</string>
+    <!-- Menu -->
+    <string name="menu_exit">Exit</string>
     <string name="menu_title">Menu</string>
 </resources>

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Gallery;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,11 +25,13 @@ public class GalleryFragment extends SherlockListFragment{
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 
-		String[] values = getFiles();
+		// Keep this so can test with SkyDrive
+		
+		//String[] values = getFiles();
 
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-				R.layout.gallery_item, values);
-		setListAdapter(adapter);
+		//ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+		//		R.layout.gallery_item, values);
+		//setListAdapter(adapter);
 	}
 
 	@Override
@@ -40,9 +43,14 @@ public class GalleryFragment extends SherlockListFragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_gallery, container, false);
-		//View rootView = inflater.inflate(R.layout.fragment_login, container, false);
-		((TextView)rootView.findViewById(R.id.textView_gallery)).setText("Gallery will be here");		
+		((TextView)rootView.findViewById(R.id.textView_gallery)).setText("Local photos");		
 
+		((TextView)rootView.findViewById(R.id.IAP_gallery)).setText("SkyDrive gallery avaialbe as In App purchase.");
+		
+		// TODO: Find better widget for gallaery
+		Gallery myGallery = (Gallery) rootView.findViewById(R.id.myGallery_gallery);
+		myGallery.setAdapter(new ImageAdapter(rootView.getContext(),getFiles()));
+		
 		return rootView;
 	}
 
@@ -71,7 +79,7 @@ public class GalleryFragment extends SherlockListFragment{
 		ArrayList<String> fileNames = new ArrayList<String>();
 
 		for(File f : files){
-			if (f.isFile() && f.getName().endsWith(".jpg"))
+			if (f.isFile() && f.getName().toLowerCase().endsWith(".jpg"))
 			{
 				fileNames.add(f.getAbsolutePath());
 			}
