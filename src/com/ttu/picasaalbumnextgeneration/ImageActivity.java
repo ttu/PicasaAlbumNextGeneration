@@ -1,5 +1,9 @@
 package com.ttu.picasaalbumnextgeneration;
 
+import java.io.File;
+import java.util.Date;
+
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,9 +19,14 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
+import com.microsoft.live.LiveOperation;
+import com.microsoft.live.LiveOperationException;
+import com.microsoft.live.LiveUploadOperationListener;
 
 public class ImageActivity extends SherlockActivity{
 
+	String mUri = "";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,6 +38,8 @@ public class ImageActivity extends SherlockActivity{
 
 		Bundle extras = getIntent().getExtras();
 		String uriString = extras.getString("ImageUri");
+		mUri = uriString;
+		
 		Toast.makeText(this, uriString, Toast.LENGTH_LONG).show();
 		//Uri selectedImage = Uri.parse("file://" + uriString);
 		//getContentResolver().notifyChange(selectedImage, null);
@@ -51,7 +62,11 @@ public class ImageActivity extends SherlockActivity{
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		SubMenu sub = menu.addSubMenu(getString(R.string.menu_title));
-		sub.add(0, 10, 0, getString(R.string.btn_upload)); 
+		
+		if (((PicasaNGApplication)getApplication()).IsUserLoggedIn()){
+			sub.add(0, 10, 0, getString(R.string.btn_upload)); 
+		}
+		
 		sub.add(1, 11, 0, getString(R.string.menu_exit));    
 		sub.getItem().setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 		return true;
@@ -59,8 +74,7 @@ public class ImageActivity extends SherlockActivity{
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {	
-		Toast.makeText(this, "Item Id \"" + item.getItemId() + "\"", Toast.LENGTH_SHORT).show();
-
+		
 		switch(item.getItemId()){
 		case 0:
 			return false;
@@ -71,6 +85,30 @@ public class ImageActivity extends SherlockActivity{
 			return true;
 		case 10:
 			Toast.makeText(this, "Upload", Toast.LENGTH_SHORT).show();
+			
+			File toUpload = new File(mUri);
+			String fileName = String.valueOf(new Date().getTime()) + ".jpg";		
+			
+			PicasaNGApplication mApp = (PicasaNGApplication) getApplication();
+			mApp.getConnectClient().uploadAsync(
+					"me/skydrive", fileName, toUpload, new LiveUploadOperationListener() {
+						@Override
+						public void onUploadCompleted(LiveOperation arg0) {
+							// TODO: Show message			
+						}
+
+						@Override
+						public void onUploadFailed(LiveOperationException arg0,
+								LiveOperation arg1) {
+							// TODO: Show message					
+						}
+
+						@Override
+						public void onUploadProgress(int arg0, int arg1,
+								LiveOperation arg2) {
+							// TODO: Show progress
+							
+						}});
 			return false;
 		case 11:
 		default:
