@@ -1,18 +1,14 @@
 package com.ttu.picasaalbumnextgeneration;
 
 import java.io.IOException;
-import java.lang.ref.SoftReference;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.HashMap;
-import java.util.Map;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 public class BitmapHelper {
 
+	// Get file from URL
 	public static Bitmap GetFile(String strUrl) throws IOException{
 		
 		URL url = new URL(strUrl);
@@ -27,6 +23,7 @@ public class BitmapHelper {
 		return null;
 	}
 
+	// Get local file and shrink it to smaller size
 	public static Bitmap ShrinkBitmap(String file, int width, int height) {
 
 		BitmapFactory.Options bmpFactoryOptions = new BitmapFactory.Options();

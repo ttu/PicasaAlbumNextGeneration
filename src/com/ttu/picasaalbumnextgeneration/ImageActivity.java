@@ -3,14 +3,10 @@ package com.ttu.picasaalbumnextgeneration;
 import java.io.File;
 import java.util.Date;
 
-import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.Toast;
@@ -39,17 +35,12 @@ public class ImageActivity extends SherlockActivity{
 		Bundle extras = getIntent().getExtras();
 		String uriString = extras.getString("ImageUri");
 		mUri = uriString;
-		
-		Toast.makeText(this, uriString, Toast.LENGTH_LONG).show();
-		//Uri selectedImage = Uri.parse("file://" + uriString);
-		//getContentResolver().notifyChange(selectedImage, null);
+
 		ImageView imageView = (ImageView) findViewById(R.id.image_container);
 		imageView.setScaleType(ScaleType.FIT_CENTER);
-		//ContentResolver cr = getContentResolver();
-		Bitmap bitmap;
+
 		try {
-			bitmap = BitmapHelper.ShrinkBitmap(uriString, 1000, 1000);
-			//bitmap = android.provider.MediaStore.Images.Media.getBitmap(cr, selectedImage);
+			Bitmap bitmap = BitmapHelper.ShrinkBitmap(uriString, 1000, 1000);
 			imageView.setImageBitmap(bitmap);
 			Toast.makeText(this, uriString,Toast.LENGTH_LONG).show();
 		} catch (Exception e) {
@@ -63,11 +54,12 @@ public class ImageActivity extends SherlockActivity{
 	public boolean onCreateOptionsMenu(Menu menu) {
 		SubMenu sub = menu.addSubMenu(getString(R.string.menu_title));
 		
+		// Add upload menuitem only if user is logged in
 		if (((PicasaNGApplication)getApplication()).IsUserLoggedIn()){
 			sub.add(0, 10, 0, getString(R.string.btn_upload)); 
 		}
 		
-		sub.add(1, 11, 0, getString(R.string.menu_exit));    
+		sub.add(1, 6, 0, getString(R.string.menu_exit));    
 		sub.getItem().setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 		return true;
 	}
@@ -94,7 +86,7 @@ public class ImageActivity extends SherlockActivity{
 					"me/skydrive", fileName, toUpload, new LiveUploadOperationListener() {
 						@Override
 						public void onUploadCompleted(LiveOperation arg0) {
-							// TODO: Show message			
+							// TODO: Show message
 						}
 
 						@Override
@@ -110,7 +102,7 @@ public class ImageActivity extends SherlockActivity{
 							
 						}});
 			return false;
-		case 11:
+		case 6:
 		default:
 			moveTaskToBack(true);
 			return true;

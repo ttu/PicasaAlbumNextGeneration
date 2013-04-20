@@ -10,20 +10,15 @@ import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
 
 import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 // http://stackoverflow.com/questions/2729267/android-camera-intent
@@ -44,11 +39,9 @@ public class CameraActivity extends SherlockActivity {
 	}
 	
 	private String getImageName() {
-	    // Create an image file name
-	    String timeStamp = 
-	        new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-	    String imageFileName = JPEG_FILE_PREFIX + timeStamp;
-	
+	    // Create an image file name based on current time
+	    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+	    String imageFileName = JPEG_FILE_PREFIX + timeStamp;	
 	    return imageFileName + "." + JPEG_FILE_SUFFIX;
 	}
 	
@@ -67,20 +60,9 @@ public class CameraActivity extends SherlockActivity {
 		
 		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) == false)
 		{
+			// Something wrong with SD card
 			 Toast.makeText(this, "Storage not mounted", Toast.LENGTH_SHORT).show();
 		}
-		
-		//Creating Button variable
-        Button button = (Button) findViewById(R.id.btn_upload);     
-      
-       //Adding Listener to button
-       button.setOnClickListener(new View.OnClickListener() {
-          
-            @Override
-            public void onClick(View v) {
-                // TODO: Upload current photo
-            }
-        });
          
 		takePhoto();
 	}
@@ -123,15 +105,14 @@ public class CameraActivity extends SherlockActivity {
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
 		SubMenu sub = menu.addSubMenu(getString(R.string.menu_title));
-		sub.add(0, R.style.Theme_Sherlock, 0, getString(R.string.menu_exit));       
+		sub.add(0, 6, 0, getString(R.string.menu_exit));       
 		sub.getItem().setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 		return true;
     }
 	
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {	
-		Toast.makeText(this, "Item Id \"" + item.getItemId() + "\"", Toast.LENGTH_SHORT).show();
-       		
+			
 		switch(item.getItemId()){
 			case 0:
 				return false;

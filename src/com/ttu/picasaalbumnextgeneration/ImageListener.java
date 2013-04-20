@@ -3,6 +3,7 @@ package com.ttu.picasaalbumnextgeneration;
 import android.content.Intent;
 import android.view.View;
 
+// ImageListener opens a single item view
 public class ImageListener implements View.OnClickListener 
 {
     private String mImage;

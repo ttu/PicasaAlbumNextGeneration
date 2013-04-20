@@ -7,7 +7,6 @@ import com.actionbarsherlock.view.SubMenu;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 
 public class MenuActivity extends SherlockFragmentActivity implements
@@ -33,7 +32,6 @@ public class MenuActivity extends SherlockFragmentActivity implements
 
 	@Override
 	public void onItemSelected(String id) {
-		Toast.makeText(this, "Menu item clicked", Toast.LENGTH_SHORT).show();
 		
 		if (mTwoPane) {
 			Bundle arguments = new Bundle();
@@ -66,21 +64,22 @@ public class MenuActivity extends SherlockFragmentActivity implements
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
 			SubMenu sub = menu.addSubMenu(getString(R.string.menu_title));
-	        sub.add(0, R.style.Theme_Sherlock, 0, getString(R.string.menu_exit));       
+	        sub.add(0, 6, 0, getString(R.string.menu_exit));       
 	        sub.getItem().setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 	        return true;
     }
 	
 	 @Override
 	    public boolean onOptionsItemSelected(MenuItem item) {
-		  	Toast.makeText(this, "Item Id \"" + item.getItemId() + "\"", Toast.LENGTH_SHORT).show();
-	          
-			 if (item.getItemId() == android.R.id.home || item.getItemId() == 0) {
-		            return false;
-		     }
-		 
-			 moveTaskToBack(true);
-	       
-			 return true;
+		   		
+			switch(item.getItemId()){
+				case 0:
+				case android.R.id.home:
+					return false;
+				case 6:
+				default:
+					moveTaskToBack(true);
+					return true;
+			}
 	    }
 }

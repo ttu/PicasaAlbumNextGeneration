@@ -10,25 +10,24 @@ import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Gallery;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockListFragment;
 
 public class GalleryFragment extends SherlockListFragment{
 
+	public GalleryFragment() {
+	}
+	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 
-		// Keep this so can test with SkyDrive
-		
+		// Use this to test with SkyDrive album
 		//String[] values = getFiles();
-
 		//ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
 		//		R.layout.gallery_item, values);
 		//setListAdapter(adapter);
@@ -45,9 +44,10 @@ public class GalleryFragment extends SherlockListFragment{
 		View rootView = inflater.inflate(R.layout.fragment_gallery, container, false);
 		((TextView)rootView.findViewById(R.id.textView_gallery)).setText("Local photos");		
 
-		((TextView)rootView.findViewById(R.id.IAP_gallery)).setText("SkyDrive gallery avaialbe as In App purchase.");
+		// TODO: Add gallery for SkyDrive
+		((TextView)rootView.findViewById(R.id.IAP_gallery)).setText("SkyDrive gallery available as In App purchase.");
 		
-		// TODO: Find better widget for gallaery
+		// TODO: Find better widget for gallery
 		Gallery myGallery = (Gallery) rootView.findViewById(R.id.myGallery_gallery);
 		myGallery.setAdapter(new ImageAdapter(rootView.getContext(),getFiles()));
 		
@@ -58,8 +58,10 @@ public class GalleryFragment extends SherlockListFragment{
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 		Object item = l.getItemAtPosition(position);
-		showToast(item.toString());
+		// Show item name (file location and name)
+		//showToast(item.toString());
 		
+		// Start Image Activity
 		Intent detailIntent = new Intent(v.getContext(), ImageActivity.class);
     	detailIntent.putExtra("ImageUri", item.toString());
     	v.getContext().startActivity(detailIntent);
@@ -70,6 +72,7 @@ public class GalleryFragment extends SherlockListFragment{
 		Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
 	}
 
+	// Get all files form album directory
 	private String[] getFiles(){
 		String path = getAlbumDir();
 
