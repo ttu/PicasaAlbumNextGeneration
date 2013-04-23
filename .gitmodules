@@ -2,6 +2,3 @@
 	path = ActionBarSherlock
 	url = https://github.com/JakeWharton/ActionBarSherlock
 	ignore = dirty
-[submodule "LiveSDK-for-Android"]
-	path = LiveSDK-for-Android
-	url = https://github.com/liveservices/LiveSDK-for-Android
