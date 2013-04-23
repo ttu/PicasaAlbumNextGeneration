@@ -5,7 +5,7 @@
 package com.microsoft.live;
 
 final public class LiveConfig {
-    public static final String CLIENT_ID = "YOUR CLIENT ID HERE";
+    public static final String CLIENT_ID = "00000000440D581C";
 
     public static final String[] SCOPES = {
         "wl.signin",
