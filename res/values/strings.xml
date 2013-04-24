@@ -12,8 +12,9 @@
     <string name="btn_upload">Upload</string>
     
     <!-- Login view -->
-  	<string name="welcome">Welcome to the Picasa Album Next Generation!</string>
-    <string name="begin">Login by pressing \"Sign in\" button.</string>
+  	<string name="welcome">Picasa Album Next Generation!</string>
+    <string name="begin_in">Login by pressing \"Sign in\" button.</string>
+    <string name="begin_out">Logout by pressing \"Sign out\" button.</string>
     <string name="sign_in">Sign in</string>
     <string name="sign_out">Sign out</string>
 

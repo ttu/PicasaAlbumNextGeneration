@@ -13,7 +13,8 @@
     
     <!-- Login view -->
   	<string name="welcome">Bienvenidos!</string>
-    <string name="begin">Login by pressing \"Sign in\" button.</string>
+    <string name="begin_in">Login by pressing \"Sign in\" button.</string>
+    <string name="begin_out">Logout by pressing \"Sign out\" button.</string>
     <string name="sign_in">Sign in</string>
     <string name="sign_out">Sign out</string>
 

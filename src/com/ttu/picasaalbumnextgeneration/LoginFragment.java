@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginFragment extends SherlockFragment {
@@ -28,6 +29,7 @@ public class LoginFragment extends SherlockFragment {
 
 	private PicasaNGApplication mApp;
 	private LiveAuthClient mAuthClient;
+	private TextView mSignInText;
 	private Button mSignInButton;
 
 	public LoginFragment() {
@@ -49,10 +51,13 @@ public class LoginFragment extends SherlockFragment {
 		View rootView = inflater.inflate(R.layout.fragment_login, container, false);
 
 		mSignInButton = (Button) rootView.findViewById(R.id.signInButton);
-
+		mSignInText = (TextView) rootView.findViewById(R.id.beginTextView);
+		
 		if (mApp.IsUserLoggedIn()){
+			mSignInText.setText(R.string.begin_out);
 			mSignInButton.setText(R.string.sign_out);
 		} else {
+			mSignInText.setText(R.string.begin_in);
 			mSignInButton.setText(R.string.sign_in);
 		}
 		

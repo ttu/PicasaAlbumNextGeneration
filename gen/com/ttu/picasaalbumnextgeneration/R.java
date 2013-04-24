@@ -920,7 +920,7 @@ containing a value of this type.
         public static final int ic_launcher=0x7f02006f;
     }
     public static final class id {
-        public static final int IAP_gallery=0x7f04003d;
+        public static final int IAP_gallery=0x7f04003c;
         public static final int ImageView=0x7f040033;
         public static final int abs__action_bar=0x7f040022;
         public static final int abs__action_bar_container=0x7f040021;
@@ -962,30 +962,29 @@ containing a value of this type.
         public static final int abs__title=0x7f04001b;
         public static final int abs__titleDivider=0x7f04001c;
         public static final int abs__up=0x7f04000b;
-        public static final int beginTextView=0x7f040041;
-        public static final int btn_upload=0x7f040034;
+        public static final int beginTextView=0x7f040040;
         public static final int disableHome=0x7f040009;
         public static final int edit_query=0x7f040027;
-        public static final int gallery_container=0x7f040035;
-        public static final int gallery_fragment=0x7f04003a;
-        public static final int gallery_item=0x7f040043;
+        public static final int gallery_container=0x7f040034;
+        public static final int gallery_fragment=0x7f040039;
+        public static final int gallery_item=0x7f040042;
         public static final int homeAsUp=0x7f040006;
-        public static final int image_container=0x7f040036;
-        public static final int item_detail=0x7f04003e;
-        public static final int item_detail_container=0x7f040037;
-        public static final int item_list=0x7f040038;
+        public static final int image_container=0x7f040035;
+        public static final int item_detail=0x7f04003d;
+        public static final int item_detail_container=0x7f040036;
+        public static final int item_list=0x7f040037;
         public static final int listMode=0x7f040002;
-        public static final int login_container=0x7f040039;
-        public static final int login_fragment=0x7f04003f;
-        public static final int myGallery_gallery=0x7f04003c;
+        public static final int login_container=0x7f040038;
+        public static final int login_fragment=0x7f04003e;
+        public static final int myGallery_gallery=0x7f04003b;
         public static final int normal=0x7f040001;
         public static final int showCustom=0x7f040008;
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
-        public static final int signInButton=0x7f040042;
+        public static final int signInButton=0x7f040041;
         public static final int tabMode=0x7f040003;
-        public static final int textView1=0x7f040040;
-        public static final int textView_gallery=0x7f04003b;
+        public static final int textView1=0x7f04003f;
+        public static final int textView_gallery=0x7f04003a;
         public static final int useLogo=0x7f040004;
         public static final int wrap_content=0x7f040000;
     }
@@ -1092,15 +1091,16 @@ containing a value of this type.
          */
         public static final int abs__shareactionprovider_share_with_application=0x7f090009;
         public static final int app_name=0x7f09000f;
-        public static final int begin=0x7f090017;
+        public static final int begin_in=0x7f090017;
+        public static final int begin_out=0x7f090018;
         public static final int btn_upload=0x7f090015;
         /**  Menu 
  Menu 
          */
-        public static final int menu_exit=0x7f09001a;
-        public static final int menu_title=0x7f09001b;
-        public static final int sign_in=0x7f090018;
-        public static final int sign_out=0x7f090019;
+        public static final int menu_exit=0x7f09001b;
+        public static final int menu_title=0x7f09001c;
+        public static final int sign_in=0x7f090019;
+        public static final int sign_out=0x7f09001a;
         public static final int title_camera=0x7f090013;
         public static final int title_gallery=0x7f090012;
         public static final int title_image=0x7f090014;

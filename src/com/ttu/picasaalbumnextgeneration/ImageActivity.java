@@ -42,7 +42,7 @@ public class ImageActivity extends SherlockActivity{
 		try {
 			Bitmap bitmap = BitmapHelper.ShrinkBitmap(uriString, 1000, 1000);
 			imageView.setImageBitmap(bitmap);
-			Toast.makeText(this, uriString,Toast.LENGTH_LONG).show();
+			//Toast.makeText(this, uriString,Toast.LENGTH_LONG).show();
 		} catch (Exception e) {
 			Toast.makeText(this, "Failed to load", Toast.LENGTH_SHORT)
 			.show();
