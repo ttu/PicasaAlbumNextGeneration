@@ -1,0 +1,44 @@
+To get this up and running:
+
+Project url:
+https://github.com/ttu/PicasaAlbumNextGeneration
+
+Add this project to Workspace and add it as a library to PicasaAlbumNextGeneration (Could not get it working as a submodule for some reason)
+https://github.com/liveservices/LiveSDK-for-Android
+
+
+1) What does in general
+
+With this photo album user can log in to SkyDrive, capture pictures with camera, view images with galleryview and upload local images to SkyDrive.
+
+
+2) What done and not done
+
+- Main developement was done in Dev branch and merged to Main branch when something was working. Actionabar Sherlock was added in own branch, but that was little unnecessary as this was small project and done alone.
+
+- SkyDrive was used as a back end. Use can log in and log out of the service. When user is logged in, user can upload local photos from single picture view. 
+
+- Up navigation returns to main activity, which has main menu. ActionBar has options also to take application to background and to upload photos.
+
+- Single picture view supports orientation changes. User can take new photos and also upload most recent photo to SkyDrive. Gallery view can be used to list local photos.
+
+- Localization was tested with english and spanish.
+
+Things to be done:
+
+- First version of application was developed with Intellij IDE. Had some problems with that and decided to start from the beginning, so this version is Next Generation. 
+
+- Original plan was to use Picasa (hence the name), but couldn't get that working and I was running out of time, so decided to switch to SkyDrive and use LiveSDK for Android. In the end I didn't have time to complete download feature.
+
+- I Didn't have enough time to create UI that was originally planned, which would take more advantage of fragments. Instead of static menu, original plan was to create sliding menu (sliding fragment).
+
+
+3) Open source libraries
+
+This application uses ActionBar Sherlock
+http://actionbarsherlock.com/
+License: https://github.com/JakeWharton/ActionBarSherlock/blob/master/LICENSE.txt
+
+LiveSDk-for-Android for providing connection and functionality to SkyDrive
+https://github.com/liveservices/LiveSDK-for-Android
+License: https://github.com/liveservices/LiveSDK-for-Android/blob/master/LICENSE.txt
